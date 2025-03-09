@@ -11,14 +11,89 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+  <link rel="stylesheet" href="/css/disable.css">
+  <link rel="stylesheet" href="/src/output.css">
 </head>
 
-<body>
-  <div class="container mx-auto">
-    <h1 class="text-dark ">Hi</h1>
+<body class="bg-blackCustom">
+
+
+  <div class="navbar container mx-auto text-blood font-poppins p-4">
+    <div class="flex-1 md:flex-none">
+      <div class="flex flex-row gap-x-2 items-center">
+        <a class="text-3xl font-bold">Ani<span class="text-whiteCustom">Gen</span> </a>
+        <img src="/assets/images/iconn.png" class="size-12" alt="">
+
+      </div>
+
+      <!-- middle nav-->
+
+
+    </div>
+    <div class="flex-1 flex justify-center items-center flex-row gap-x-4 font-poppins hidden md:flex">
+      <a href="">
+        <h1>Generator</h1>
+      </a>
+      <a href="">
+        <h1>Trending</h1>
+      </a>
+      <a href="">
+        <h1>About</h1>
+      </a>
+    </div>
+    <!-- search container for tablet screens-->
+    <div class="hidden flex items-center justify-end text-whiteCustom  md:flex font-montserrat">
+      <label class="input focus-within:ring-1 focus-within:ring-blood rounded-md">
+        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input type="search " class="search-input" placeholder="Search" />
+        <kbd class="kbd kbd-sm bg-blackDarker">ctrl</kbd>
+        <kbd class="kbd kbd-sm bg-blackDarker">K</kbd>
+      </label>
+    </div>
+    <div class="flex-none">
+      <ul class="px-1 flex items-center justify-start" id="menu-btn">
+        <!-- <li class="hidden md:block active:bg-blackCustom active:text-inherit">
+          <a>Generate</a>
+        </li>
+        <li class="hidden md:block">
+          <a>About</a>
+        </li> -->
+        <li class="md:hidden transition duration-300 hover:opacity-50">
+          <button class="cursor-pointer ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="inline-block size-12  stroke-current active:bg-transparent ">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+
   </div>
-  <script src="/js/main.js"></script>
+
+  <!-- search container for small screens -->
+  <div class="container mx-auto p-4">
+    <div class=" flex items-center justify-center text-whiteCustom w-full md:hidden">
+      <label
+        class="input rounded-md border border-grayCustom focus-within:ring-1 focus-within:ring-blood focus-within:border-transparent">
+        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input type="search " class="search-input " placeholder="Search" />
+      </label>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>
