@@ -1,118 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniGen</title>
+    <link rel="icon" href="/assets/images/iconn.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/disable.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AniGen</title>
-  <link rel="icon" href="/assets/images/iconn.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/css/disable.css">
-  <link rel="stylesheet" href="/src/output.css">
-</head>
+  <body class="bg-blackCustom">
+    <div class="navbar container mx-auto text-blood font-poppins p-4">
+      <div class="flex-1 md:flex-none">
+        <div class="flex flex-row gap-x-2 items-center">
+          <a class="text-3xl font-bold"
+            >Ani<span class="text-whiteCustom">Gen</span>
+          </a>
+          <img src="/assets/images/iconn.png" class="size-12" alt="" />
+        </div>
 
-<body class="bg-blackCustom ">
-
-
-  <div class="navbar container mx-auto text-blood font-poppins p-4">
-    <div class="flex-1 md:flex-none">
-      <div class="flex flex-row gap-x-2 items-center">
-        <a class="text-3xl font-bold">Ani<span class="text-whiteCustom">Gen</span> </a>
-        <img src="/assets/images/iconn.png" class="size-12" alt="">
-
+        <!-- middle nav-->
       </div>
+      <div
+        class="flex-1 flex justify-center items-center flex-row gap-x-4 font-poppins hidden lg:flex md:justify-end lg:justify-center"
+      >
+        <a href="#" class="relative group">
+          <span class="text-lg text-blood">Generator</span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+          ></span>
+        </a>
 
-      <!-- middle nav-->
-
-
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center flex-row gap-x-4 font-poppins hidden lg:flex md:justify-end lg:justify-center">
-      <a href="#" class="relative group">
-        <span class="text-lg  text-blood">Generator</span>
-        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform 
-          duration-300 origin-left"></span>
-      </a>
-
-      <a href="#" class="relative group">
-        <span class="text-lg  text-blood">Trending</span>
-        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform 
-                duration-300 origin-left"></span>
-      </a>
-      <a href="#" class="relative group">
-        <span class="text-lg  text-blood">About</span>
-        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform 
-                duration-300 origin-left"></span>
-      </a>
-    </div>
-    <!-- search container for tablet screens-->
-    <div class="hidden flex items-center justify-end text-whiteCustom  lg:flex font-montserrat ">
-      <label class="input focus-within:ring-1 focus-within:ring-blood rounded-md">
-        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </g>
-        </svg>
-        <input type="search " class="search-input font-montserrat" placeholder="Search" />
-        <kbd class="kbd kbd-sm bg-blackDarker">ctrl</kbd>
-        <kbd class="kbd kbd-sm bg-blackDarker">K</kbd>
-      </label>
-    </div>
-    <div class="flex-1 lg:flex-0">
-      <ul class="px-1 flex items-center justify-end" id="menu-btn">
-        <!-- <li class="hidden md:block active:bg-blackCustom active:text-inherit">
+        <a href="#" class="relative group">
+          <span class="text-lg text-blood">Trending</span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+          ></span>
+        </a>
+        <a href="#" class="relative group">
+          <span class="text-lg text-blood">About</span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+          ></span>
+        </a>
+      </div>
+      <!-- search container for tablet screens-->
+      <div
+        class="hidden flex items-center justify-end text-whiteCustom lg:flex font-montserrat"
+      >
+        <label
+          class="input focus-within:ring-1 focus-within:ring-blood rounded-md"
+        >
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input
+            type="search "
+            class="search-input font-montserrat"
+            placeholder="Search"
+          />
+          <kbd class="kbd kbd-sm bg-blackDarker">ctrl</kbd>
+          <kbd class="kbd kbd-sm bg-blackDarker">K</kbd>
+        </label>
+      </div>
+      <div class="flex-1 lg:flex-0">
+        <ul class="px-1 flex items-center justify-end" id="menu-btn">
+          <!-- <li class="hidden md:block active:bg-blackCustom active:text-inherit">
           <a>Generate</a>
         </li>
         <li class="hidden md:block">
           <a>About</a>
         </li> -->
-        <li class="lg:hidden transition duration-300 hover:opacity-50">
-          <button class="cursor-pointer ">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              class="inline-block size-12  stroke-current active:bg-transparent ">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- toggled menu section for small screens -->
-  <div id=menu-section class="hidden container mx-auto p-4">
-    <div class="flex flex-col gap-y-8 w-full border-t-2 border-blood text-whiteCustom text-xl font-poppins">
-      <a href="" class="mt-4 hover:text-blood transition duration-300">
-        <h1>Generator</h1>
-      </a>
-      <a href="" class=" hover:text-blood transition duration-300">
-        <h1>Trending</h1>
-      </a>
-      <a href="" class=" hover:text-blood transition duration-300">
-        <h1>About</h1>
-      </a>
-      <!-- search container for small screens -->
-      <div class=" flex items-center justify-start text-whiteCustom w-full lg:hidden">
-        <label
-          class="input rounded-md border border-grayCustom focus-within:ring-1 focus-within:ring-blood focus-within:border-transparent w-full ">
-          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search " class="search-input " placeholder="Search" />
-        </label>
+          <li class="lg:hidden transition duration-300 hover:opacity-50">
+            <button class="cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block size-12 stroke-current active:bg-transparent"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+    <!-- toggled menu section for small screens -->
+    <div id="menu-section" class="hidden container mx-auto p-4">
+      <div
+        class="flex flex-col gap-y-8 w-full border-t-2 border-blood text-whiteCustom text-xl font-poppins"
+      >
+        <a href="" class="mt-4 hover:text-blood transition duration-300">
+          <h1>Generator</h1>
+        </a>
+        <a href="" class="hover:text-blood transition duration-300">
+          <h1>Trending</h1>
+        </a>
+        <a href="" class="hover:text-blood transition duration-300">
+          <h1>About</h1>
+        </a>
+        <!-- search container for small screens -->
+        <div
+          class="flex items-center justify-start text-whiteCustom w-full lg:hidden"
+        >
+          <label
+            class="input rounded-md border border-grayCustom focus-within:ring-1 focus-within:ring-blood focus-within:border-transparent w-full"
+          >
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input type="search " class="search-input" placeholder="Search" />
+          </label>
+        </div>
+      </div>
+    </div>
 
-
-
-  <script type="module" src="/js/main.js"></script>
-</body>
-
+    <script type="module" src="/js/main.js"></script>
+  </body>
 </html>
