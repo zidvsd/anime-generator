@@ -14,3 +14,9 @@
   --color-blackDarker: #14171d;
   --color-grayCustom: #7e8088;
 }
+
+@layer components {
+  .button-custom {
+    @apply py-2 px-6 bg-blood text-center text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat;
+  }
+}
