@@ -1,21 +1,20 @@
 export const toggleMenu = () => {
   const menuBtn = document.getElementById("menu-btn");
   const menuSection = document.getElementById("menu-section");
+  const navBar = document.querySelector(".navbar");
+
   menuBtn.addEventListener("click", () => {
-    if (menuSection.classList.contains("hidden")) {
-      menuSection.classList.remove("hidden");
-    } else {
-      menuSection.classList.add("hidden");
-    }
+    const isHidden = menuSection.classList.contains("hidden");
+
+    menuSection.classList.toggle("hidden");
+    navBar.classList.toggle("border-b-2", isHidden);
+    navBar.classList.toggle("border-blood", isHidden);
   });
 
   window.addEventListener("resize", () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 1024) {
-      console.log("hello");
+    if (window.innerWidth >= 1024) {
       menuSection.classList.add("hidden");
-    } else {
-      menuSection.classList.remove("hidden");
+      navBar.classList.remove("border-b-2", "border-blood");
     }
   });
 };

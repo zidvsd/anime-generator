@@ -10,6 +10,7 @@ export const searchShortcut = () => {
   const hideSearch = () => {
     searchInputs.forEach((input) => {
       input.blur();
+      input.value = "";
     });
   };
 
