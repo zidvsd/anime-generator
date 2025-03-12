@@ -8,11 +8,11 @@
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
-  --color-blood: #fa4351;
+  --color-blood: #c51d34;
   --color-blackCustom: #1d2129;
-  --color-whiteCustom: #f8f8ff;
-  --color-blackDarker: #14171d;
-  --color-grayCustom: #7e8088;
+  --color-whiteCustom: #f5f5f5;
+  --color-blackDarker: #2e2e30;
+  --color-grayCustom: #808080;
 }
 
 @layer components {
@@ -20,20 +20,20 @@
     @apply py-2 px-6 bg-blood text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat self-center text-center lg:self-start;
   }
 
-  a {
-    cursor: pointer;
-  }
-
   .feature-cta {
-    @apply py-2 px-6 border-blood bg-blackDarker text-center text-blood transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat border-b;
+    @apply py-2 px-6 border-blood bg-blackDarker text-center text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat border-b;
   }
 
   .section-title {
-    @apply font-poppins font-bold text-3xl text-blackDarker;
+    @apply font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-blackCustom;
+  }
+
+  .section-subtitle {
+    @apply font-montserrat font-bold text-xl text-whiteCustom;
   }
 
   .section-subheading {
-    @apply font-inter text-xl text-blackCustom;
+    @apply font-montserrat text-xl text-whiteCustom font-normal;
   }
 
   .center-div {
