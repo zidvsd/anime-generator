@@ -3437,6 +3437,9 @@
       transform-origin: bottom;
     }
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
   .dock-sm {
     height: calc(0.25rem * 14);
     height: 3.5rem;
@@ -3731,6 +3734,9 @@
     button {
       cursor: pointer;
     }
+  }
+  .z-50 {
+    z-index: 50;
   }
   .z-auto {
     z-index: auto;
@@ -7037,6 +7043,9 @@
   .px-1 {
     padding-inline: calc(var(--spacing) * 1);
   }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
@@ -7057,6 +7066,9 @@
   }
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
+  }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
   }
   .pb-24 {
     padding-bottom: calc(var(--spacing) * 24);
@@ -8914,8 +8926,8 @@
     align-self: center;
     border-radius: calc(infinity * 1px);
     background-color: var(--color-blood);
-    padding-inline: calc(var(--spacing) * 6);
-    padding-block: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 8);
+    padding-block: calc(var(--spacing) * 3);
     text-align: center;
     font-family: var(--font-montserrat);
     --tw-font-weight: var(--font-weight-semibold);
@@ -8943,8 +8955,8 @@
     border-bottom-width: 1px;
     border-color: var(--color-blood);
     background-color: var(--color-blackDarker);
-    padding-inline: calc(var(--spacing) * 6);
-    padding-block: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 8);
+    padding-block: calc(var(--spacing) * 3);
     text-align: center;
     font-family: var(--font-montserrat);
     --tw-font-weight: var(--font-weight-semibold);
@@ -8983,8 +8995,8 @@
     font-family: var(--font-montserrat);
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
     color: var(--color-whiteCustom);
   }
   .section-subheading {
@@ -9001,7 +9013,7 @@
     justify-content: center;
   }
   .custom-radial {
-    background: radial-gradient( circle, var(--color-blackCustom) 0%, #171a21 30%,  var(--color-blackDarker) 60%, #0d0f14 100%  );
+    background: radial-gradient(circle, var(--color-blackCustom) 0%, #171a21 30%,  var(--color-blackDarker) 60%, #0d0f14 100%  );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

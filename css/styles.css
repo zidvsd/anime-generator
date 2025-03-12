@@ -17,11 +17,11 @@
 
 @layer components {
   .button-custom {
-    @apply py-2 px-6 bg-blood text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat self-center text-center lg:self-start;
+    @apply py-3 px-8 bg-blood text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat self-center text-center lg:self-start;
   }
 
   .feature-cta {
-    @apply py-2 px-6 border-blood bg-blackDarker text-center text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat border-b;
+    @apply py-3 px-8 border-blood bg-blackDarker text-center text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat border-b;
   }
 
   .section-title {
@@ -29,7 +29,7 @@
   }
 
   .section-subtitle {
-    @apply font-montserrat font-bold text-xl text-whiteCustom;
+    @apply font-montserrat font-normal text-xl text-whiteCustom;
   }
 
   .section-subheading {
@@ -41,13 +41,14 @@
   }
 
   .custom-radial {
-    background: radial-gradient(
-      circle,
-      var(--color-blackCustom) 0%,
-      #171a21 30%,
-      /* Midway dark transition */ var(--color-blackDarker) 60%,
-      #0d0f14 100% /* Even darker end */
-    );
+    background: radial-gradient(circle,
+        var(--color-blackCustom) 0%,
+        #171a21 30%,
+        /* Midway dark transition */
+        var(--color-blackDarker) 60%,
+        #0d0f14 100%
+        /* Even darker end */
+      );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
