@@ -1,322 +1,511 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniGen</title>
+    <link rel="icon" href="/assets/images/icons/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/disable.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AniGen</title>
-  <link rel="icon" href="/assets/images/iconn.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="/css/disable.css" />
-  <link rel="stylesheet" href="/src/output.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "xuKNiO4rzSw0V7v0F",
+        });
+      })();
+    </script>
+  </head>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</head>
-
-<body class="custom-radial pt-20">
-  <div id="navbar"
-    class="fixed top-0 left-0 w-full z-50 bg-blackCustom drop-shadow-[0_4px_4px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out">
-
-    <div class="navbar container transition-transform duration-300 ease-in-out mx-auto text-blood font-poppins p-4 ">
-      <div class="flex-1 md:flex-none">
-        <a href="#main" class="flex flex-row gap-x-2 items-center cursor-pointer">
-          <span class="text-3xl font-bold drop-shadow-[0px_0px_39px_rgba(255,0,123,0.6)]">
-            Ani<span class="text-whiteCustom">Gen</span>
-          </span>
-          <img src="/assets/images/iconn.png" class="size-14 overflow-visible object-cover" alt="" />
-        </a>
-
-        <!-- middle nav-->
-      </div>
+  <body class="custom-radial pt-20">
+    <div
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-blackCustom drop-shadow-[0_4px_4px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out"
+    >
       <div
-        class="flex-1 justify-center items-center flex-row gap-x-6 font-poppins font-semibold hidden lg:flex md:justify-end lg:justify-center">
-        <a href="#" class="relative group">
-          <span class="text-lg text-blood">Generator</span>
-          <span class="header-hover"></span>
-        </a>
+        class="navbar container transition-transform duration-300 ease-in-out mx-auto text-blood font-poppins p-4"
+      >
+        <div class="flex-1 md:flex-none">
+          <a
+            href="#main"
+            class="flex flex-row gap-x-2 items-center cursor-pointer"
+          >
+            <span
+              class="text-3xl font-bold drop-shadow-[0px_0px_39px_rgba(255,0,123,0.6)]"
+            >
+              Ani<span class="text-whiteCustom">Gen</span>
+            </span>
+            <img
+              src="/assets/images/icons/icon.png"
+              class="size-14 overflow-visible object-cover"
+              alt=""
+            />
+          </a>
 
-        <a href="#" class="relative group">
-          <span class="text-lg text-blood">Trending</span>
-          <span class="header-hover"></span>
-        </a>
-        <a href="#" class="relative group">
-          <span class="text-lg text-blood">About</span>
-          <span class="header-hover"></span>
-        </a>
-      </div>
-      <!-- search container for tablet screens-->
-      <div class="hidden items-center justify-end text-whiteCustom lg:flex font-montserrat">
-        <label class="input focus-within:ring-1 focus-within:ring-blood rounded-md">
-          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search " class="search-input font-montserrat" placeholder="Search" />
-          <kbd class="kbd kbd-sm bg-blackDarker">ctrl</kbd>
-          <kbd class="kbd kbd-sm bg-blackDarker">K</kbd>
-        </label>
-      </div>
-      <div class="flex-1 lg:flex-0">
-        <ul class="px-1 flex items-center justify-end" id="menu-btn">
-          <!-- <li class="hidden md:block active:bg-blackCustom active:text-inherit">
+          <!-- middle nav-->
+        </div>
+        <div
+          class="flex-1 justify-center items-center flex-row gap-x-6 font-poppins font-semibold hidden lg:flex md:justify-end lg:justify-center"
+        >
+          <a href="#" class="relative group">
+            <span class="text-lg text-blood">Generator</span>
+            <span class="header-hover"></span>
+          </a>
+
+          <a href="#" class="relative group">
+            <span class="text-lg text-blood">Trending</span>
+            <span class="header-hover"></span>
+          </a>
+          <a href="#" class="relative group">
+            <span class="text-lg text-blood">About</span>
+            <span class="header-hover"></span>
+          </a>
+        </div>
+        <!-- search container for tablet screens-->
+        <div
+          class="hidden items-center justify-end text-whiteCustom lg:flex font-montserrat"
+        >
+          <label
+            class="input focus-within:ring-1 focus-within:ring-blood rounded-md"
+          >
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              type="search "
+              class="search-input font-montserrat"
+              placeholder="Search"
+            />
+            <kbd class="kbd kbd-sm bg-blackDarker">ctrl</kbd>
+            <kbd class="kbd kbd-sm bg-blackDarker">K</kbd>
+          </label>
+        </div>
+        <div class="flex-1 lg:flex-0">
+          <ul class="px-1 flex items-center justify-end" id="menu-btn">
+            <!-- <li class="hidden md:block active:bg-blackCustom active:text-inherit">
           <a>Generate</a>
         </li>
         <li class="hidden md:block">
           <a>About</a>
         </li> -->
-          <li class="lg:hidden transition duration-300 hover:opacity-50">
-            <button class="cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                class="inline-block size-12 stroke-current active:bg-transparent">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                </path>
-              </svg>
+            <li class="lg:hidden transition duration-300 hover:opacity-50">
+              <button class="cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block size-12 stroke-current active:bg-transparent"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- toggled menu section for small screens -->
+    <div id="menu-section" class="hidden container mx-auto p-4">
+      <div
+        class="flex flex-col gap-y-8 w-full border-blood text-whiteCustom text-xl font-poppins"
+      >
+        <a href="" class="mt-4 hover:text-blood transition duration-300">
+          <h1>Generator</h1>
+        </a>
+        <a href="" class="hover:text-blood transition duration-300">
+          <h1>Trending</h1>
+        </a>
+        <a href="" class="hover:text-blood transition duration-300">
+          <h1>About</h1>
+        </a>
+        <!-- search container for small screens -->
+        <div
+          class="flex items-center justify-start text-whiteCustom w-full lg:hidden"
+        >
+          <label
+            class="input rounded-md border border-grayCustom focus-within:ring-1 focus-within:ring-blood focus-within:border-transparent w-full"
+          >
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input type="search " class="search-input" placeholder="Search" />
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- main section -->
+    <main id="main">
+      <div class="container mx-auto hero w-full lg:mt-12">
+        <div
+          class="hero-content flex flex-col-reverse lg:flex-row items-center lg:gap-x-8 w-full"
+        >
+          <div
+            class="w-full lg:w-1/2 flex flex-col items-center justify-center"
+          >
+            <!-- Wrapper to keep p inside the image -->
+            <div class="relative w-full">
+              <img
+                id="hero-img"
+                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                class="w-full rounded-lg"
+              />
+              <p
+                id="hero-title"
+                class="absolute bottom-0 left-0 w-full bg-blackDarker bg-opacity-50 px-8 text-center rounded-bl-md rounded-br-md font-light font-montserrat text-blood text-3xl"
+              >
+                Loading <span class="dots"></span>
+              </p>
+            </div>
+
+            <!-- Button below the image -->
+
+            <button class="button-custom mt-8 lg:hidden cursor-pointer">
+              Start Exploring
             </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- toggled menu section for small screens -->
-  <div id="menu-section" class="hidden container mx-auto p-4">
-    <div class="flex flex-col gap-y-8 w-full border-blood text-whiteCustom text-xl font-poppins">
-      <a href="" class="mt-4 hover:text-blood transition duration-300">
-        <h1>Generator</h1>
-      </a>
-      <a href="" class="hover:text-blood transition duration-300">
-        <h1>Trending</h1>
-      </a>
-      <a href="" class="hover:text-blood transition duration-300">
-        <h1>About</h1>
-      </a>
-      <!-- search container for small screens -->
-      <div class="flex items-center justify-start text-whiteCustom w-full lg:hidden">
-        <label
-          class="input rounded-md border border-grayCustom focus-within:ring-1 focus-within:ring-blood focus-within:border-transparent w-full">
-          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search " class="search-input" placeholder="Search" />
-        </label>
-      </div>
-    </div>
-  </div>
-  <!-- main section -->
-  <main id="main">
-    <div class="container mx-auto hero w-full lg:mt-12">
-      <div class="hero-content flex flex-col-reverse lg:flex-row items-center lg:gap-x-8 w-full">
-        <div class="w-full lg:w-1/2 flex flex-col items-center justify-center">
-          <!-- Wrapper to keep p inside the image -->
-          <div class="relative w-full">
-            <img id="hero-img" src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-              class="w-full rounded-lg" />
-            <p id="hero-title"
-              class="absolute bottom-0 left-0 w-full bg-blackDarker bg-opacity-50 px-8 text-center rounded-bl-md rounded-br-md font-light font-montserrat text-blood text-3xl">
-              Loading <span class="dots"></span>
-            </p>
           </div>
 
-          <!-- Button below the image -->
+          <div
+            class="text-center lg:text-left lg:w-1/2 mt-8 lg:mt-0 flex flex-col"
+          >
+            <h1
+              id="hero-heading"
+              class="text-4xl tracking-wide font-bold font-poppins bg-gradient-to-r from-[#3a0002] via-blood to-[#ff4d4d] bg-clip-text text-transparent md:text-5xl lg:text-6xl"
+            ></h1>
+            <p
+              class="py-6 font-inter tracking-widest text-whiteCustom text-xl md:text-2xl"
+            >
+              Explore trending anime and get personalized recommendations.
+            </p>
 
-          <button class="button-custom mt-8 lg:hidden cursor-pointer">
-            Start Exploring
-          </button>
+            <button class="button-custom hidden lg:flex cursor-pointer">
+              Start Exploring
+            </button>
+          </div>
         </div>
+      </div>
+    </main>
 
-        <div class="text-center lg:text-left lg:w-1/2 mt-8 lg:mt-0 flex flex-col">
-          <h1 id="hero-heading"
-            class="text-4xl tracking-wide font-bold font-poppins bg-gradient-to-r from-[#3a0002] via-blood to-[#ff4d4d] bg-clip-text text-transparent md:text-5xl lg:text-6xl">
+    <!-- introductory page -->
+    <section id="feature" class="w-full mt-12">
+      <div
+        class="mx-auto bg-blood flex flex-col pt-4 relative pb-24 items-center justify-center lg:rounded-xl lg:container"
+      >
+        <!-- section title -->
+        <div class="feature-text space-y-8 pt-12 text-center">
+          <h1 class="section-title mx-auto max-w-5/6">
+            Experience the Future of Anime Tracking
           </h1>
-          <p class="py-6 font-inter tracking-widest text-whiteCustom text-xl md:text-2xl">
-            Explore trending anime and get personalized recommendations.
+          <p class="mx-auto section-subtitle max-w-md text-balance">
+            Discover, track, and share your favorite anime and manga with
+            AniList.
           </p>
+        </div>
+        <!-- grid section -->
+        <div
+          class="grid grid-cols-1 lg:px-12 mt-12 grid-rows-2 gap-12 w-full items-center justify-center md:grid-cols-2"
+        >
+          <div class="center-div gap-x-8 px-2 w-full flex-row">
+            <!-- icons -->
+            <div class="w-2/5">
+              <img
+                src="/assets/images/icons/discover.png"
+                class="w-full"
+                alt=""
+              />
+            </div>
+            <!-- titles/subtitles -->
+            <div class="w-full space-y-4">
+              <h1 class="section-title text-2xl">Explore Your Interests</h1>
+              <p class="section-subheading">
+                Uncover your top genres and most-watched voice actors. Gain
+                insights into your viewing habits with detailed analytics.
+              </p>
+            </div>
+          </div>
+          <div class="center-div gap-x-8 px-2 w-full flex-row">
+            <!-- icons -->
+            <div class="w-2/5">
+              <img src="/assets/images/icons/phone.png" class="w-full" alt="" />
+            </div>
+            <!-- titles/subtitles -->
+            <div class="w-full space-y-4">
+              <h1 class="section-title text-2xl">Access AniList Anywhere</h1>
+              <p class="section-subheading">
+                Seamlessly track your progress across multiple devices,
+                including iOS, Android, macOS, and Windows.
+              </p>
+            </div>
+          </div>
+          <div class="center-div gap-x-8 px-2 w-full flex-row">
+            <!-- icons -->
+            <div class="w-2/5">
+              <img
+                src="/assets/images/icons/message.png"
+                class="w-full"
+                alt=""
+              />
+            </div>
+            <!-- titles/subtitles -->
+            <div class="w-full space-y-4">
+              <h1 class="section-title text-2xl">Engage with the Community</h1>
+              <p class="section-subheading">
+                Join discussions, connect with fellow anime fans, make friends,
+                and get personalized recommendations.
+              </p>
+            </div>
+          </div>
+          <div class="center-div gap-x-8 px-2 w-full flex-row">
+            <!-- icons -->
+            <div class="w-2/5">
+              <img
+                src="/assets/images/icons/design.png"
+                class="w-full"
+                alt=""
+              />
+            </div>
+            <!-- titles/subtitles -->
+            <div class="w-full space-y-4">
+              <h1 class="section-title text-2xl">Customize Your Experience</h1>
+              <p class="section-subheading">
+                Tailor your scoring system, title formats, and color themes to
+                match your preferences—plus, enjoy dark mode!
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- cta -->
 
-          <button class="button-custom hidden lg:flex cursor-pointer">
-            Start Exploring
-          </button>
+        <button
+          class="feature-cta absolute lg:self-start w-auto -bottom-5 left-1/2 -translate-x-1/2 cursor-pointer"
+        >
+          Explore Now
+        </button>
+      </div>
+    </section>
+
+    <!-- footer container -->
+    <footer class="bg-blackCustom text-gray-300 py-12 px-6 mt-32">
+      <div class="container mx-auto flex flex-col md:flex-row w-full">
+        <!-- Profile & Description -->
+        <div class="w-full md:w-3/5 flex flex-col items-start gap-y-2">
+          <div
+            class="flex flex-row gap-x-4 items-start justify-start md:justify-center md:items-center"
+          >
+            <img
+              src="/assets/images/0b347d46-f579-43d3-b758-bde1f43e502a.jpeg"
+              alt="Your Profile"
+              class="rounded-full size-28 border-2 border-blood object-cover aspect-square"
+            />
+            <div class="flex flex-col gap-y-2">
+              <p class="footer-heading">Zid Visda</p>
+              <p class="footer-subheading max-w-xs">
+                Passionate web developer crafting interactive and user-friendly
+                experiences, constantly exploring new technologies to enhance
+                web development.
+              </p>
+            </div>
+          </div>
+          <!-- social links -->
+          <h1 class="mt-4 footer-heading">Follow Me</h1>
+          <div class="flex justify-start gap-x-6 mt-4">
+            <a
+              href="https://github.com/zidvsd"
+              target="_blank"
+              class="hover:text-white"
+              ><img
+                src="/assets/images/icons/github.svg"
+                class="size-8 fill-whiteCustom"
+                alt=""
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/rashid-visda-48b688338/"
+              target="_blank"
+              class="hover:text-white"
+              ><img
+                src="/assets/images/icons/linkedin.svg"
+                class="size-8 fill-whiteCustom"
+                alt=""
+            /></a>
+            <a
+              href="https://x.com/zidvsd"
+              target="_blank"
+              class="hover:text-white"
+              ><img
+                src="/assets/images/icons/twitter-x.svg"
+                class="size-8 fill-whiteCustom"
+                alt=""
+            /></a>
+          </div>
+
+          <!-- tech stack -->
+          <h3 class="footer-heading mt-4">Tech Stack</h3>
+          <div
+            class="flex space-x-4 mt-4 flex-wrap gap-4 max-w-xl techstack-icons"
+          >
+            <img src="/assets/images/icons/html.svg" alt="" />
+            <img src="assets/images/icons/css.svg" alt="" />
+            <img src="assets/images/icons/js.svg" alt="" />
+            <img src="assets/images/icons/tailwind.svg" alt="" />
+            <img src="assets/images/icons/daisyui-logomark.svg" alt="" />
+            <img src="assets/images/icons/vercel.svg" alt="" />
+            <img src="assets/images/icons/git.svg" alt="" />
+            <img src="assets/images/icons/figma.svg" alt="" />
+            <img src="assets/images/icons/git.svg" alt="" />
+          </div>
+        </div>
+        <!-- Contact Form -->
+        <div class="w-full md:w-2/5 text-left mt-12 md:mt-0">
+          <h3 class="footer-heading">Feedback</h3>
+          <form>
+            <label for="name" class="mt-4 block footer-subheading">Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              class="w-full max-w-full md:max-w-md p-2 mb-2 rounded bg-blackDarker border border-whiteCustom text-whiteCustom placeholder-grayCustom focus:border-blood focus:ring-2 focus:ring-blood outline-none"
+            />
+
+            <label for="email" class="block footer-subheading">Email</label>
+            <input
+              type="email"
+              required
+              id="email"
+              placeholder="Your email (optional)"
+              class="w-full max-w-full md:max-w-md p-2 mb-2 rounded bg-blackDarker border border-whiteCustom text-whiteCustom placeholder-grayCustom focus:border-blood focus:ring-2 focus:ring-blood outline-none"
+            />
+
+            <label for="subject" class="block footer-subheading">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              required
+              placeholder="Subject"
+              class="w-full max-w-full md:max-w-md p-2 mb-2 rounded bg-blackDarker border border-whiteCustom text-whiteCustom placeholder-grayCustom focus:border-blood focus:ring-2 focus:ring-blood outline-none"
+            />
+
+            <label for="message" class="block footer-subheading">Message</label>
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              class="w-full max-w-full md:max-w-md p-2 mb-2 rounded bg-blackDarker border border-whiteCustom text-whiteCustom placeholder-grayCustom focus:border-blood focus:ring-2 focus:ring-blood outline-none"
+            ></textarea>
+
+            <button
+              id="submit-email"
+              class="max-w-full md:max-w-md bg-blood hover:opacity-50 transition duration-300 ease-in-out cursor-pointer text-white font-bold px-4 py-2 rounded w-full"
+            >
+              Send
+            </button>
+          </form>
         </div>
       </div>
-    </div>
-  </main>
 
-  <!-- introductory page -->
-  <section id="feature" class="w-full mt-12">
-    <div
-      class="mx-auto bg-blood flex flex-col pt-4 relative pb-24 items-center justify-center lg:rounded-xl lg:container">
-      <!-- section title -->
-      <div class="feature-text space-y-8 pt-12 text-center">
-        <h1 class="section-title mx-auto max-w-5/6">
-          Experience the Future of Anime Tracking
-        </h1>
-        <p class="mx-auto section-subtitle max-w-md text-balance">
-          Discover, track, and share your favorite anime and manga with
-          AniList.
+      <!-- Logo & Navigation (Centered) -->
+      <div
+        class="flex flex-col container mx-auto items-center justify-between text-center mt-12 md:flex-row gap-y-4 md:gap-y-0"
+      >
+        <a href="#main" class="flex items-center gap-x-2">
+          <span
+            class="text-3xl font-bold text-blood drop-shadow-[0px_0px_39px_rgba(255,0,123,0.6)]"
+          >
+            Ani<span class="text-whiteCustom">Gen</span>
+          </span>
+          <img
+            src="/assets/images/icons/icon.png"
+            class="size-16 object-cover"
+            alt="Website Logo"
+          />
+        </a>
+        <nav class="">
+          <ul class="flex space-x-6">
+            <li>
+              <a href="#" class="relative group">
+                <span class="text-lg text-blood font-poppins font-semibold"
+                  >Generator</span
+                >
+                <span class="header-hover"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="relative group">
+                <span class="text-lg text-blood font-poppins font-semibold"
+                  >Trending</span
+                >
+                <span class="header-hover"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="relative group">
+                <span class="text-lg text-blood font-poppins font-semibold"
+                  >About</span
+                >
+                <span class="header-hover"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Copyright & Disclaimer -->
+      <div
+        class="text-center mt-8 border-t text-whiteCustom border-whiteCustom pt-4 container mx-auto"
+      >
+        <p>&copy; 2025 AniGen. All Rights Reserved.</p>
+        <p class="text-xs mt-2 text-grayCustom">
+          Disclaimer: All anime content belongs to their respective creators and
+          copyright holders.
         </p>
       </div>
-      <!-- grid section -->
-      <div class="grid grid-cols-1 lg:px-12 mt-12 grid-rows-2 gap-12 w-full items-center justify-center md:grid-cols-2">
-        <div class="center-div gap-x-8 px-2  w-full flex-row">
-          <!-- icons -->
-          <div class="w-2/5">
-            <img src="/assets/images/discover.png" class="w-full" alt="" />
-          </div>
-          <!-- titles/subtitles -->
-          <div class="w-full space-y-4">
-            <h1 class="section-title text-2xl">Explore Your Interests</h1>
-            <p class="section-subheading">
-              Uncover your top genres and most-watched voice actors. Gain
-              insights into your viewing habits with detailed analytics.
-            </p>
-          </div>
-        </div>
-        <div class="center-div gap-x-8 px-2 w-full flex-row">
-          <!-- icons -->
-          <div class="w-2/5">
-            <img src="/assets/images/phone.png" class="w-full" alt="" />
-          </div>
-          <!-- titles/subtitles -->
-          <div class="w-full space-y-4">
-            <h1 class="section-title text-2xl">Access AniList Anywhere</h1>
-            <p class="section-subheading">
-              Seamlessly track your progress across multiple devices,
-              including iOS, Android, macOS, and Windows.
-            </p>
-          </div>
-        </div>
-        <div class="center-div gap-x-8 px-2 w-full flex-row">
-          <!-- icons -->
-          <div class="w-2/5">
-            <img src="/assets/images/message.png" class="w-full" alt="" />
-          </div>
-          <!-- titles/subtitles -->
-          <div class="w-full space-y-4">
-            <h1 class="section-title text-2xl">Engage with the Community</h1>
-            <p class="section-subheading">
-              Join discussions, connect with fellow anime fans, make friends,
-              and get personalized recommendations.
-            </p>
-          </div>
-        </div>
-        <div class="center-div gap-x-8 px-2 w-full flex-row">
-          <!-- icons -->
-          <div class="w-2/5">
-            <img src="/assets/images/design.png" class="w-full" alt="" />
-          </div>
-          <!-- titles/subtitles -->
-          <div class="w-full space-y-4">
-            <h1 class="section-title text-2xl">Customize Your Experience</h1>
-            <p class="section-subheading">
-              Tailor your scoring system, title formats, and color themes to
-              match your preferences—plus, enjoy dark mode!
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- cta -->
+    </footer>
 
-      <button class="feature-cta absolute lg:self-start w-auto -bottom-5 left-1/2 -translate-x-1/2 cursor-pointer">
-        Explore Now
-      </button>
-    </div>
-  </section>
-
-  <!-- footer container -->
-  <footer class="bg-gray-900 text-gray-300 py-12 px-6 mt-32">
-    <div class="container mx-auto flex flex-col md:flex-row gap-12 w-full">
-      <!-- Profile & Description -->
-      <div class="w-full md:w-3/5 flex flex-col items-start">
-        <img src="/assets/images/0b347d46-f579-43d3-b758-bde1f43e502a.jpeg" alt="Your Profile"
-          class="rounded-full size-28 border-2 border-gray-500 object-cover">
-        <p class="text-lg font-semibold mt-4">Zid Visda</p>
-        <p class="text-sm mt-2 max-w-xs">Passionate web developer crafting interactive and user-friendly experiences.
-        </p>
-        <!-- social links -->
-        <h1>Follow Me</h1>
-        <div class="flex justify-start space-x-4 mb-4">
-          <a href="#" class="hover:text-white">🔗 Twitter</a>
-          <a href="#" class="hover:text-white">🔗 GitHub</a>
-          <a href="#" class="hover:text-white">🔗 LinkedIn</a>
-        </div>
-
-        <!-- tech stack -->
-        <h3 class="text-lg font-semibold mt-4">Tech Stack</h3>
-        <div class="flex space-x-4 mt-2 flex-wrap gap-2">
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">HTML</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">CSS</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">JavaScript</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Tailwind CSS</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">DaisyUI</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Vercel</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Git</span>
-          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Figma</span>
-        </div>
-
-      </div>
-
-      <!-- Contact Form -->
-      <div class="w-full md:w-2/5 text-left">
-
-        <h3 class="text-lg font-semibold mb-3">Feedback</h3>
-        <form>
-          <label for="name" class="block text-sm font-medium text-gray-400">Your Name</label>
-          <input type="text" id="name" placeholder="Your Name"
-            class="w-full p-2 mb-2 rounded bg-gray-800 border border-gray-700 text-white">
-
-          <label for="email" class="block text-sm font-medium text-gray-400">Your Email</label>
-          <input type="email" id="email" placeholder="Your Email"
-            class="w-full p-2 mb-2 rounded bg-gray-800 border border-gray-700 text-white">
-
-          <label for="message" class="block text-sm font-medium text-gray-400">Your Message</label>
-          <textarea id="message" placeholder="Your Message"
-            class="w-full p-2 mb-2 rounded bg-gray-800 border border-gray-700 text-white"></textarea>
-
-          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full">Send</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Logo & Navigation (Centered) -->
-    <div class="flex flex-col items-center text-center mt-12">
-      <a href="#main" class="flex items-center gap-x-2">
-        <span class="text-3xl font-bold text-blood drop-shadow-[0px_0px_39px_rgba(255,0,123,0.6)]">
-          Ani<span class="text-whiteCustom">Gen</span>
-        </span>
-        <img src="/assets/images/iconn.png" class="size-14 object-cover" alt="Website Logo">
-      </a>
-      <nav class="mt-4">
-        <ul class="flex space-x-6">
-          <li><a href="#section1" class="relative group text-lg text-blood">Generator</a></li>
-          <li><a href="#section2" class="relative group text-lg text-blood">Trending</a></li>
-          <li><a href="#section3" class="relative group text-lg text-blood">About</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Copyright & Disclaimer -->
-    <div class="text-center mt-8 border-t border-gray-700 pt-4">
-      <p>&copy; 2025 AniGen. All Rights Reserved.</p>
-      <p class="text-xs mt-2">Disclaimer: All anime content belongs to their respective creators and copyright holders.
-      </p>
-    </div>
-  </footer>
-
-
-
-
-
-
-  <script type="module" src="/js/main.js"></script>
-</body>
-
+    <script type="module" src="/js/main.js"></script>
+  </body>
 </html>

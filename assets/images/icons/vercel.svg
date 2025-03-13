@@ -1,0 +1,5 @@
+ <svg data-testid="geist-icon" width="100" height="100" viewBox="0 0 100 100" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M50 6L0 94H100L50 6ZM50 25.15L16.15 86H83.85L50 25.15Z"
+              fill="currentColor"></path>
+          </svg>

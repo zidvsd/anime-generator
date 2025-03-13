@@ -42,18 +42,29 @@
 
   .header-hover {
     @apply absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left;
+  }
 
+  .footer-heading {
+    @apply font-montserrat font-bold text-2xl text-blood;
+  }
+
+  .footer-subheading {
+    @apply font-inter font-normal text-whiteCustom text-base;
+  }
+
+  .techstack-icons img {
+    height: 2rem;
+    width: 2rem;
   }
 
   .custom-radial {
-    background: radial-gradient(circle,
-        var(--color-blackCustom) 0%,
-        #171a21 30%,
-        /* Midway dark transition */
-        var(--color-blackDarker) 60%,
-        #0d0f14 100%
-        /* Even darker end */
-      );
+    background: radial-gradient(
+      circle,
+      var(--color-blackCustom) 0%,
+      #171a21 30%,
+      /* Midway dark transition */ var(--color-blackDarker) 60%,
+      #0d0f14 100% /* Even darker end */
+    );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
