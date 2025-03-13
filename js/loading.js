@@ -1,5 +1,6 @@
 export const loading = () => {
-  document.getElementById("hero-img").src = "/assets/images/loading.gif";
+  document.getElementById("hero-img").src =
+    "/assets/Dual Ring@1x-1.0s-200px-200px.gif";
   document.getElementById("hero-title").innerHTML = `
     <p id="hero-title"
             class="absolute bg-blackCustom bg-opacity-50 px-8 w-full text-center rounded-bl-md rounded-br-md -translate-x-1/2 bottom-0 left-1/2 font-montserrat font-light text-blood text-3xl">
