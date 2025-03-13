@@ -13,6 +13,9 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="/css/disable.css" />
   <link rel="stylesheet" href="/src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body class="custom-radial pt-20">
@@ -34,23 +37,20 @@
         class="flex-1 justify-center items-center flex-row gap-x-6 font-poppins font-semibold hidden lg:flex md:justify-end lg:justify-center">
         <a href="#" class="relative group">
           <span class="text-lg text-blood">Generator</span>
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span class="header-hover"></span>
         </a>
 
         <a href="#" class="relative group">
           <span class="text-lg text-blood">Trending</span>
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span class="header-hover"></span>
         </a>
         <a href="#" class="relative group">
           <span class="text-lg text-blood">About</span>
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span class="header-hover"></span>
         </a>
       </div>
       <!-- search container for tablet screens-->
-      <div class="hidden flex items-center justify-end text-whiteCustom lg:flex font-montserrat">
+      <div class="hidden items-center justify-end text-whiteCustom lg:flex font-montserrat">
         <label class="input focus-within:ring-1 focus-within:ring-blood rounded-md">
           <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
@@ -136,7 +136,7 @@
 
         <div class="text-center lg:text-left lg:w-1/2 mt-8 lg:mt-0 flex flex-col">
           <h1 id="hero-heading"
-            class="text-5xl tracking-wide font-bold font-poppins bg-gradient-to-r from-[#3a0002] via-blood to-[#ff4d4d] bg-clip-text text-transparent md:text-6xl lg:text-7xl">
+            class="text-4xl tracking-wide font-bold font-poppins bg-gradient-to-r from-[#3a0002] via-blood to-[#ff4d4d] bg-clip-text text-transparent md:text-5xl lg:text-6xl">
           </h1>
           <p class="py-6 font-inter tracking-widest text-whiteCustom text-xl md:text-2xl">
             Explore trending anime and get personalized recommendations.
@@ -151,7 +151,7 @@
   </main>
 
   <!-- introductory page -->
-  <section id="feature" class="w-full h-screen mt-12">
+  <section id="feature" class="w-full mt-12">
     <div
       class="mx-auto bg-blood flex flex-col pt-4 relative pb-24 items-center justify-center lg:rounded-xl lg:container">
       <!-- section title -->
@@ -173,7 +173,7 @@
           </div>
           <!-- titles/subtitles -->
           <div class="w-full space-y-4">
-            <h1 class="section-title text-xl">Explore Your Interests</h1>
+            <h1 class="section-title text-2xl">Explore Your Interests</h1>
             <p class="section-subheading">
               Uncover your top genres and most-watched voice actors. Gain
               insights into your viewing habits with detailed analytics.
@@ -187,7 +187,7 @@
           </div>
           <!-- titles/subtitles -->
           <div class="w-full space-y-4">
-            <h1 class="section-title text-xl">Access AniList Anywhere</h1>
+            <h1 class="section-title text-2xl">Access AniList Anywhere</h1>
             <p class="section-subheading">
               Seamlessly track your progress across multiple devices,
               including iOS, Android, macOS, and Windows.
@@ -201,7 +201,7 @@
           </div>
           <!-- titles/subtitles -->
           <div class="w-full space-y-4">
-            <h1 class="section-title text-xl">Engage with the Community</h1>
+            <h1 class="section-title text-2xl">Engage with the Community</h1>
             <p class="section-subheading">
               Join discussions, connect with fellow anime fans, make friends,
               and get personalized recommendations.
@@ -215,7 +215,7 @@
           </div>
           <!-- titles/subtitles -->
           <div class="w-full space-y-4">
-            <h1 class="section-title text-xl">Customize Your Experience</h1>
+            <h1 class="section-title text-2xl">Customize Your Experience</h1>
             <p class="section-subheading">
               Tailor your scoring system, title formats, and color themes to
               match your preferences—plus, enjoy dark mode!
@@ -230,6 +230,92 @@
       </button>
     </div>
   </section>
+
+  <!-- footer container -->
+  <footer class="bg-gray-900 text-gray-300 py-12 px-6 mt-32">
+    <div class="container mx-auto flex flex-col md:flex-row gap-12 w-full">
+      <!-- Profile & Description -->
+      <div class="w-full md:w-3/5 flex flex-col items-start">
+        <img src="/assets/images/0b347d46-f579-43d3-b758-bde1f43e502a.jpeg" alt="Your Profile"
+          class="rounded-full size-28 border-2 border-gray-500 object-cover">
+        <p class="text-lg font-semibold mt-4">Zid Visda</p>
+        <p class="text-sm mt-2 max-w-xs">Passionate web developer crafting interactive and user-friendly experiences.
+        </p>
+        <!-- social links -->
+        <h1>Follow Me</h1>
+        <div class="flex justify-start space-x-4 mb-4">
+          <a href="#" class="hover:text-white">🔗 Twitter</a>
+          <a href="#" class="hover:text-white">🔗 GitHub</a>
+          <a href="#" class="hover:text-white">🔗 LinkedIn</a>
+        </div>
+
+        <!-- tech stack -->
+        <h3 class="text-lg font-semibold mt-4">Tech Stack</h3>
+        <div class="flex space-x-4 mt-2 flex-wrap gap-2">
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">HTML</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">CSS</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">JavaScript</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Tailwind CSS</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">DaisyUI</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Vercel</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Git</span>
+          <span class="bg-gray-800 px-3 py-1 text-sm rounded">Figma</span>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="w-full md:w-2/5 text-left">
+
+        <h3 class="text-lg font-semibold mb-3">Feedback</h3>
+        <form>
+          <label for="name" class="block text-sm font-medium text-gray-400">Your Name</label>
+          <input type="text" id="name" placeholder="Your Name"
+            class="w-full p-2 mb-2 rounded bg-gray-800 border border-gray-700 text-white">
+
+          <label for="email" class="block text-sm font-medium text-gray-400">Your Email</label>
+          <input type="email" id="email" placeholder="Your Email"
+            class="w-full p-2 mb-2 rounded bg-gray-800 border border-gray-700 text-white">
+
+          <label for="message" class="block text-sm font-medium text-gray-400">Your Message</label>
+          <textarea id="message" placeholder="Your Message"
+            class="w-full p-2 mb-2 rounded bg-gray-800 border border-gray-700 text-white"></textarea>
+
+          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Logo & Navigation (Centered) -->
+    <div class="flex flex-col items-center text-center mt-12">
+      <a href="#main" class="flex items-center gap-x-2">
+        <span class="text-3xl font-bold text-blood drop-shadow-[0px_0px_39px_rgba(255,0,123,0.6)]">
+          Ani<span class="text-whiteCustom">Gen</span>
+        </span>
+        <img src="/assets/images/iconn.png" class="size-14 object-cover" alt="Website Logo">
+      </a>
+      <nav class="mt-4">
+        <ul class="flex space-x-6">
+          <li><a href="#section1" class="relative group text-lg text-blood">Generator</a></li>
+          <li><a href="#section2" class="relative group text-lg text-blood">Trending</a></li>
+          <li><a href="#section3" class="relative group text-lg text-blood">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Copyright & Disclaimer -->
+    <div class="text-center mt-8 border-t border-gray-700 pt-4">
+      <p>&copy; 2025 AniGen. All Rights Reserved.</p>
+      <p class="text-xs mt-2">Disclaimer: All anime content belongs to their respective creators and copyright holders.
+      </p>
+    </div>
+  </footer>
+
+
+
+
+
+
   <script type="module" src="/js/main.js"></script>
 </body>
 

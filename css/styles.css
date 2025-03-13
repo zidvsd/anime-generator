@@ -17,11 +17,11 @@
 
 @layer components {
   .button-custom {
-    @apply py-3 px-8 bg-blood text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat self-center text-center lg:self-start;
+    @apply px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg lg:px-10 lg:py-5 lg:text-xl bg-blood text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat self-center text-center lg:self-start;
   }
 
   .feature-cta {
-    @apply py-3 px-8 border-blood bg-blackDarker text-center text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat border-b;
+    @apply px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg lg:px-10 lg:py-5 lg:text-xl border-blood bg-blackDarker text-center text-whiteCustom transition duration-300 ease-in-out hover:opacity-80 rounded-full font-semibold font-montserrat border-b;
   }
 
   .section-title {
@@ -33,11 +33,16 @@
   }
 
   .section-subheading {
-    @apply font-montserrat text-xl text-whiteCustom font-normal;
+    @apply font-montserrat text-base text-whiteCustom font-normal;
   }
 
   .center-div {
     @apply flex items-start justify-center;
+  }
+
+  .header-hover {
+    @apply absolute left-0 bottom-0 w-full h-0.5 bg-whiteCustom scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left;
+
   }
 
   .custom-radial {
