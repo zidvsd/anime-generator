@@ -65,6 +65,10 @@
     @apply w-full object-contain sm:object-cover rounded-lg;
   }
 
+  .trending-title {
+    @apply mt-4;
+  }
+
   .swiper-pagination-bullet {
     background-color: var(--color-blood) !important;
   }
@@ -75,13 +79,14 @@
   }
 
   .custom-radial {
-    background: radial-gradient(
-      circle,
-      var(--color-blackCustom) 0%,
-      #171a21 30%,
-      /* Midway dark transition */ var(--color-blackDarker) 60%,
-      #0d0f14 100% /* Even darker end */
-    );
+    background: radial-gradient(circle,
+        var(--color-blackCustom) 0%,
+        #171a21 30%,
+        /* Midway dark transition */
+        var(--color-blackDarker) 60%,
+        #0d0f14 100%
+        /* Even darker end */
+      );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

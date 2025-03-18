@@ -9273,6 +9273,9 @@
       object-fit: cover;
     }
   }
+  .trending-title {
+    margin-top: calc(var(--spacing) * 4);
+  }
   .swiper-pagination-bullet {
     background-color: var(--color-blood) !important;
   }
@@ -9280,7 +9283,7 @@
     color: var(--color-blood) !important;
   }
   .custom-radial {
-    background: radial-gradient( circle, var(--color-blackCustom) 0%, #171a21 30%,  var(--color-blackDarker) 60%, #0d0f14 100%  );
+    background: radial-gradient(circle, var(--color-blackCustom) 0%, #171a21 30%,  var(--color-blackDarker) 60%, #0d0f14 100%  );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
