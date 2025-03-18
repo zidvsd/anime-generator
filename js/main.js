@@ -6,6 +6,9 @@ import { sendMail } from "./form.js";
 import { initSwiper } from "./swiper.js";
 import { loadHeroSection } from "./loadHeroSection.js";
 import { displayTrending } from "./trendingSection.js";
+import { filterSection } from "./generator/view-option.js";
+import { filterGenre } from "./generator/genre.js";
+
 window.onload = () => {
   navScroll();
   searchShortcut();
@@ -15,5 +18,7 @@ window.onload = () => {
   initSwiper();
   loadHeroSection();
   displayTrending();
+  filterSection();
+  filterGenre();
   setInterval(loadHeroSection, 10000);
 };

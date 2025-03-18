@@ -42,7 +42,7 @@
       </div>
       <div
         class="flex-1 justify-center items-center flex-row gap-x-6 font-poppins font-semibold hidden lg:flex md:justify-end lg:justify-center">
-        <a href="#" class="relative group">
+        <a href="#generator" class="relative group">
           <span class="text-lg text-blood">Generator</span>
           <span class="header-hover"></span>
         </a>
@@ -95,7 +95,7 @@
   <!-- toggled menu section for small screens -->
   <div id="menu-section" class="hidden container mx-auto p-4">
     <div class="flex flex-col gap-y-8 w-full border-blood text-whiteCustom text-xl font-poppins">
-      <a href="" class="mt-4 hover:text-blood transition duration-300">
+      <a href="#generator" class="mt-4 hover:text-blood transition duration-300">
         <h1>Generator</h1>
       </a>
       <a href="#trending" class="hover:text-blood transition duration-300">
@@ -318,6 +318,96 @@
     </div>
   </section>
 
+  <!-- generator -->
+  <section id="generator">
+    <div class="container mx-auto p-4 mt-32 w-full">
+      <div class="flex flex-col gap-y-4">
+        <h1 class="text-blood responsive-header text-center lg:text-left">
+          Anime Generator
+        </h1>
+        <!-- display single/list anim container -->
+        <div class="flex flex-col mt-8 gap-x-4 gap-y-4 md:flex-row w-full items-center justify-center">
+          <button id="single-btn"
+            class="rounded-md cursor-pointer w-full md:w-1/2 flex flex-col items-start p-6  border-blood border-2 text-whiteCustom">
+            <h1 class="font-poppins font-bold text-xl">Single</h1>
+            <p class="font-inter text-left ">View one entry at a time in a slideshow format</p>
+          </button>
+          <button id="list-btn"
+            class="rounded-md cursor-pointer w-full md:w-1/2 flex flex-col items-start p-6  border-blood border-2 text-whiteCustom">
+            <h1 class="font-poppins font-bold text-xl">List</h1>
+            <p class="font-inter text-left ">View multiple entries at a time by scrolling</p>
+          </button>
+
+        </div>
+        <div class="p-4 rounded-lg w-full text-whiteCustom bg-transparent ">
+          <h1 class="font-poppins font-bold text-xl ">Genre</h1>
+          <input autocomplete="off" type="text" placeholder="Filter genres..." id="genre-filter"
+            class="w-full p-2 mt-2 mb-4 rounded-md bg-blackCustom text-white placeholder-grayCustom border border-blackCustom focus:outline-none focus:ring-2 focus:ring-blood">
+
+          <p class="text-grayCustom text-sm mb-2">Click genre once to include, twice to exclude</p>
+
+          <div class="w-full font-inter font-light">
+            <button id="dropdownToggle" class="w-full bg-gray-200 px-4 py-2 text-left rounded-md">Select Genre</button>
+            <div id="genreDropdown"
+              class="relative mt-2 w-full max-h-60 overflow-y-auto bg-white border border-gray-300 rounded-md shadow-lg hidden">
+              <div class="flex flex-wrap gap-2 p-2" id="genre-container">
+                <button class="genre-pill">Action</button>
+                <button class="genre-pill">Adventure</button>
+                <button class="genre-pill">Cars</button>
+                <button class="genre-pill">Comedy</button>
+                <button class="genre-pill">Dementia</button>
+                <button class="genre-pill">Demons</button>
+                <button class="genre-pill">Mystery</button>
+                <button class="genre-pill">Drama</button>
+                <button class="genre-pill">Ecchi</button>
+                <button class="genre-pill">Fantasy</button>
+                <button class="genre-pill">Game</button>
+                <button class="genre-pill">Hentai</button>
+                <button class="genre-pill">Historical</button>
+                <button class="genre-pill">Horror</button>
+                <button class="genre-pill">Kids</button>
+                <button class="genre-pill">Magic</button>
+                <button class="genre-pill">Martial Arts</button>
+                <button class="genre-pill">Mecha</button>
+                <button class="genre-pill">Music</button>
+                <button class="genre-pill">Parody</button>
+                <button class="genre-pill">Samurai</button>
+                <button class="genre-pill">Romance</button>
+                <button class="genre-pill">School</button>
+                <button class="genre-pill">Sci-Fi</button>
+                <button class="genre-pill">Shoujo</button>
+                <button class="genre-pill">Shoujo Ai</button>
+                <button class="genre-pill">Shounen</button>
+                <button class="genre-pill">Shounen Ai</button>
+                <button class="genre-pill">Space</button>
+                <button class="genre-pill">Sports</button>
+                <button class="genre-pill">Super Power</button>
+                <button class="genre-pill">Vampire</button>
+                <button class="genre-pill">Yaoi</button>
+                <button class="genre-pill">Yuri</button>
+                <button class="genre-pill">Harem</button>
+                <button class="genre-pill">Slice of Life</button>
+                <button class="genre-pill">Supernatural</button>
+                <button class="genre-pill">Military</button>
+                <button class="genre-pill">Police</button>
+                <button class="genre-pill">Psychological</button>
+                <button class="genre-pill">Thriller</button>
+                <button class="genre-pill">Seinen</button>
+                <button class="genre-pill">Josei</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <h1 class="font-poppins font-bold text-xl text-whiteCustom ">Selected Genre</h1>
+        <!-- selected genres container -->
+        <div class="flex flex-row gap-4 p-4" id="selected-genre-container">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- footer container -->
   <footer class="bg-blackCustom text-gray-300 py-12 px-6 mt-32">
     <div class="container mx-auto flex flex-col md:flex-row w-full">
@@ -389,7 +479,7 @@
       </div>
     </div>
 
-    <!-- Logo & Navigation (Centered) -->
+    <!-- Logo & Navigation -->
     <div
       class="flex flex-col container mx-auto items-center justify-between text-center mt-12 md:flex-row gap-y-4 md:gap-y-0">
       <a href="#main" class="flex items-center gap-x-2">
@@ -401,7 +491,7 @@
       <nav class="">
         <ul class="flex space-x-6">
           <li>
-            <a href="#" class="relative group">
+            <a href="#generator" class="relative group">
               <span class="text-lg text-blood font-poppins font-semibold">Generator</span>
               <span class="header-hover"></span>
             </a>

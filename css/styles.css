@@ -69,6 +69,18 @@
     @apply mt-4;
   }
 
+  .genre-pill {
+    @apply px-4 py-2 rounded-md text-whiteCustom transition-all cursor-pointer border border-blackDarker bg-blackCustom;
+  }
+
+  .selected {
+    @apply bg-green-500 border-green-600;
+  }
+
+  .excluded {
+    @apply bg-red-500 border-red-600;
+  }
+
   .swiper-pagination-bullet {
     background-color: var(--color-blood) !important;
   }
