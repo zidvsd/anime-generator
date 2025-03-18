@@ -5,22 +5,35 @@ export const filterGenre = () => {
   const selectedGenreContainer = document.getElementById(
     "selected-genre-container"
   );
+  const dropdownToggle = document.getElementById("dropdownToggle");
+  const genreDropdown = document.getElementById("genreDropdown");
+
+  // Add transition class for animation
+  genreDropdown.classList.add(
+    "transition-all",
+    "duration-300",
+    "ease-in-out",
+    "opacity-0",
+    "scale-95"
+  );
 
   const searchFilter = () => {
+    genreInput.addEventListener("focus", () => {
+      openDropdown();
+    });
+
     genreInput.addEventListener("input", () => {
       const filter = genreInput.value.toLowerCase();
       genres.forEach((genre) => {
-        if (!genre.textContent.trim().toLowerCase().includes(filter)) {
-          genre.classList.add("hidden");
-        } else {
-          genre.classList.remove("hidden");
-        }
+        genre.classList.toggle(
+          "hidden",
+          !genre.textContent.trim().toLowerCase().includes(filter)
+        );
       });
     });
   };
 
   const addSelectedGenre = (genreName) => {
-    // Check if genre is already selected
     if (
       ![...selectedGenreContainer.children].some(
         (g) => g.textContent === genreName
@@ -30,7 +43,7 @@ export const filterGenre = () => {
       selected.classList.add("genre-pill", "bg-blood", "selected-genre");
       selected.textContent = genreName;
       selectedGenreContainer.appendChild(selected);
-      clickCounts.set(genreName, 1); // Initialize click count
+      clickCounts.set(genreName, 1);
     }
   };
 
@@ -67,26 +80,40 @@ export const filterGenre = () => {
         }
         if (count === 3) {
           genre.remove();
-          clickCounts.delete(genreName); // Clean up map
+          clickCounts.delete(genreName);
         }
       }
     });
   };
-  const dropdownToggle = document.getElementById("dropdownToggle");
-  const genreDropdown = document.getElementById("genreDropdown");
 
-  dropdownToggle.addEventListener("click", () => {
-    genreDropdown.classList.toggle("hidden");
-  });
+  const openDropdown = () => {
+    genreDropdown.classList.remove("hidden");
+    setTimeout(() => {
+      genreDropdown.classList.remove("opacity-0", "scale-95");
+      genreDropdown.classList.add("opacity-100", "scale-100");
+    }, 10);
+  };
 
-  document.addEventListener("click", (event) => {
-    if (
-      !dropdownToggle.contains(event.target) &&
-      !genreDropdown.contains(event.target)
-    ) {
+  const closeDropdown = () => {
+    genreDropdown.classList.remove("opacity-100", "scale-100");
+    genreDropdown.classList.add("opacity-0", "scale-95");
+    setTimeout(() => {
       genreDropdown.classList.add("hidden");
-    }
-  });
+    }, 300); // Matches transition duration
+  };
+
+  const dropdown = () => {
+    dropdownToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      if (genreDropdown.classList.contains("hidden")) {
+        openDropdown();
+      } else {
+        closeDropdown();
+      }
+    });
+  };
+
+  dropdown();
   removeGenre();
   enterShortcut();
   addFilter();
