@@ -10,8 +10,8 @@
     --color-red-600: oklch(0.577 0.245 27.325);
     --color-green-500: oklch(0.723 0.219 149.579);
     --color-green-600: oklch(0.627 0.194 149.214);
-    --color-gray-200: oklch(0.928 0.006 264.531);
     --color-gray-300: oklch(0.872 0.01 258.338);
+    --color-gray-500: oklch(0.551 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -38,6 +38,8 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-9xl: 8rem;
+    --text-9xl--line-height: 1;
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
@@ -3745,9 +3747,6 @@
       cursor: pointer;
     }
   }
-  .z-10 {
-    z-index: 10;
-  }
   .z-50 {
     z-index: 50;
   }
@@ -4557,6 +4556,9 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
   }
@@ -5309,14 +5311,8 @@
   .h-screen {
     height: 100vh;
   }
-  .max-h-0 {
-    max-height: calc(var(--spacing) * 0);
-  }
   .max-h-60 {
     max-height: calc(var(--spacing) * 60);
-  }
-  .max-h-\[300px\] {
-    max-height: 300px;
   }
   .max-h-none {
     max-height: none;
@@ -6136,9 +6132,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .overflow-hidden {
-    overflow: hidden;
-  }
   .overflow-visible {
     overflow: visible;
   }
@@ -6641,9 +6634,6 @@
   .border-blood {
     border-color: var(--color-blood);
   }
-  .border-gray-300 {
-    border-color: var(--color-gray-300);
-  }
   .border-grayCustom {
     border-color: var(--color-grayCustom);
   }
@@ -6776,9 +6766,6 @@
   }
   .bg-blood {
     background-color: var(--color-blood);
-  }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -7309,6 +7296,10 @@
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
+  .text-9xl {
+    font-size: var(--text-9xl);
+    line-height: var(--tw-leading, var(--text-9xl--line-height));
+  }
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -7811,6 +7802,9 @@
   }
   .text-gray-300 {
     color: var(--color-gray-300);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
   }
   .text-grayCustom {
     color: var(--color-grayCustom);
@@ -9401,7 +9395,7 @@
     color: var(--color-blood) !important;
   }
   .custom-radial {
-    background: radial-gradient(circle, var(--color-blackCustom) 0%, #171a21 30%,  var(--color-blackDarker) 60%, #0d0f14 100%  );
+    background: radial-gradient( circle, var(--color-blackCustom) 0%, #171a21 30%,  var(--color-blackDarker) 60%, #0d0f14 100%  );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

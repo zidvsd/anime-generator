@@ -2,7 +2,7 @@ export const toggleMenu = () => {
   const menuBtn = document.getElementById("menu-btn");
   const menuSection = document.getElementById("menu-section");
   const navBar = document.querySelector(".navbar");
-
+  const navLinks = document.querySelectorAll(".nav-link");
   menuBtn.addEventListener("click", () => {
     const isHidden = menuSection.classList.contains("hidden");
 
@@ -16,5 +16,11 @@ export const toggleMenu = () => {
       menuSection.classList.add("hidden");
       navBar.classList.remove("border-b-2", "border-blood");
     }
+  });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuSection.classList.add("hidden");
+      navBar.classList.remove("border-b-2", "border-blood");
+    });
   });
 };

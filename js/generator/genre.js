@@ -3,7 +3,7 @@ export const filterGenre = () => {
   const genres = document.querySelectorAll(".genre-pill");
   const genreInput = document.getElementById("genre-filter");
   const selectedGenreContainer = document.getElementById(
-    "selected-genre-container"
+    "selected-genre-container",
   );
   const dropdownToggle = document.getElementById("dropdownToggle");
   const genreDropdown = document.getElementById("genreDropdown");
@@ -14,7 +14,7 @@ export const filterGenre = () => {
     "duration-300",
     "ease-in-out",
     "opacity-0",
-    "scale-95"
+    "scale-95",
   );
 
   const searchFilter = () => {
@@ -27,7 +27,7 @@ export const filterGenre = () => {
       genres.forEach((genre) => {
         genre.classList.toggle(
           "hidden",
-          !genre.textContent.trim().toLowerCase().includes(filter)
+          !genre.textContent.trim().toLowerCase().includes(filter),
         );
       });
     });
@@ -36,7 +36,7 @@ export const filterGenre = () => {
   const addSelectedGenre = (genreName) => {
     if (
       ![...selectedGenreContainer.children].some(
-        (g) => g.textContent === genreName
+        (g) => g.textContent === genreName,
       )
     ) {
       const selected = document.createElement("p");
@@ -60,7 +60,7 @@ export const filterGenre = () => {
       if (event.key === "Enter") {
         if (genreInput.value.trim() === "") return;
         const firstGenre = [...genres].find(
-          (genre) => !genre.classList.contains("hidden")
+          (genre) => !genre.classList.contains("hidden"),
         );
         if (firstGenre) addSelectedGenre(firstGenre.textContent.trim());
       }

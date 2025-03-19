@@ -91,14 +91,13 @@
   }
 
   .custom-radial {
-    background: radial-gradient(circle,
-        var(--color-blackCustom) 0%,
-        #171a21 30%,
-        /* Midway dark transition */
-        var(--color-blackDarker) 60%,
-        #0d0f14 100%
-        /* Even darker end */
-      );
+    background: radial-gradient(
+      circle,
+      var(--color-blackCustom) 0%,
+      #171a21 30%,
+      /* Midway dark transition */ var(--color-blackDarker) 60%,
+      #0d0f14 100% /* Even darker end */
+    );
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
