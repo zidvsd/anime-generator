@@ -16,6 +16,14 @@ export const trendingLoading = () => {
     title.innerText = "...";
   });
 };
+export const randomSectionLoading = () => {
+  document.querySelectorAll(".random-img").forEach((img) => {
+    img.src = "/assets/Dual Ring@1x-1.0s-200px-200px.gif";
+  });
+  document.querySelectorAll(".random-title").forEach((title) => {
+    title.innerText = "...";
+  });
+};
 export const heroTitleLoop = () => {
   let index = 0;
   const changeText = () => {

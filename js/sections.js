@@ -5,22 +5,26 @@ export const displaySections = () => {
     feature: document.getElementById("feature"),
     trending: document.getElementById("trending"),
     error: document.getElementById("error"),
+    random: document.getElementById("random"),
+    about: document.getElementById("about"),
   };
+
   const generatorLinks = document.querySelectorAll(".anime-gen");
   const homeBtns = document.querySelectorAll(".home");
   const trendingLinks = document.querySelectorAll(".trending");
+  const aboutLinks = document.querySelectorAll(".about");
+
   // Function to show or hide specific sections
   const toggleSections = (visibleSections = []) => {
     Object.keys(sections).forEach((key) => {
       if (sections[key]) {
-        sections[key].classList.toggle(
-          "hidden",
-          !visibleSections.includes(key),
-        );
+        const isVisible = visibleSections.includes(key);
+        sections[key].classList.toggle("hidden", !isVisible);
+        sections[key].classList.toggle("mt-8", isVisible); // Add mt-8 when displayed
       }
     });
 
-    // Adjust generator section margin if visible
+    // Adjust generator and trending section margins
     if (sections.generator) {
       sections.generator.classList.toggle(
         "mt-32",
@@ -34,18 +38,22 @@ export const displaySections = () => {
       );
     }
   };
+
   // Show error section if it exists
   const displayError = () => {
     if (sections.error) {
       sections.error.classList.remove("hidden");
+      sections.error.classList.add("mt-8"); // Ensure error section also gets mt-8 when displayed
     }
   };
-  // eventlistener for trending links
+
+  // Event listener for trending links
   trendingLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      toggleSections(["trending"]);
+      toggleSections(["trending", "random"]);
     });
   });
+
   // Event listener for generator links
   generatorLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -53,10 +61,24 @@ export const displaySections = () => {
     });
   });
 
+  // Event listener for about links
+  aboutLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      toggleSections(["about"]); // Show only about section
+    });
+  });
+
   // Event listener for home buttons
   homeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      toggleSections(["main", "feature", "trending", "generator"]); // Show all sections
+      toggleSections([
+        "main",
+        "feature",
+        "trending",
+        "generator",
+        "random",
+        "about",
+      ]); // Show all sections
     });
   });
 
