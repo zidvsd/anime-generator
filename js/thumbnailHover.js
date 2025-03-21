@@ -152,6 +152,7 @@ export const hoverEffect = () => {
   window.addEventListener("resize", () => {
     const hoverDivs = document.querySelectorAll(".fixed");
     hoverDivs.forEach((hoverDiv) => {
+      hoverDivs.style.display = "none";
       if (window.innerWidth < 1024) {
         hoverDiv.classList.add("opacity-0", "pointer-events-none");
       } else {
