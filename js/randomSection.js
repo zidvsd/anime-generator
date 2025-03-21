@@ -1,6 +1,6 @@
 import { fetchTenRandomAnimes } from "./api.js";
 import { randomSectionLoading } from "./loading.js";
-import { hoverEffect } from "./thumbnailHover.js";
+
 export const randomSection = async () => {
   randomSectionLoading();
 
@@ -11,8 +11,13 @@ export const randomSection = async () => {
 
   // Function to update UI as soon as an anime is fetched
   const updateAnime = (anime, index) => {
+    if (!anime || !anime.imageUrl) {
+      console.warn(`❌ Skipping anime at index ${index} due to missing image.`);
+      return;
+    }
+
     if (randomImg[index]) {
-      randomImg[index].src = anime.images.webp.large_image_url;
+      randomImg[index].src = anime.imageUrl;
       randomImg[index].alt = anime.title;
     }
 
@@ -23,7 +28,6 @@ export const randomSection = async () => {
     console.log(`✅ Displayed: ${anime.title}`);
   };
 
-  await fetchTenRandomAnimes(updateAnime);
-  hoverEffect();
+  await fetchTenRandomAnimes(updateAnime); // Pass the function as an argument
   console.log("✅ Finished fetching random animes!");
 };

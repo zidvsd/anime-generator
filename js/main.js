@@ -10,6 +10,7 @@ import { filterSection } from "./generator/view-option.js";
 import { filterGenre } from "./generator/genre.js";
 import { displaySections } from "./sections.js";
 import { randomSection } from "./randomSection.js";
+import { fetchTenTrendingAnimes } from "./api.js";
 window.onload = () => {
   navScroll();
   searchShortcut();
@@ -23,5 +24,6 @@ window.onload = () => {
   filterGenre();
   displaySections();
   randomSection();
+  fetchTenTrendingAnimes();
   setInterval(loadHeroSection, 20000);
 };

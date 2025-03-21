@@ -5,8 +5,8 @@ export const hoverEffect = () => {
   const createDiv = () => {
     const hoverDiv = document.createElement("div");
     hoverDiv.classList.add(
-      "fixed", // Change to fixed so it's positioned relative to viewport
-      "bg-blackCustom",
+      "fixed",
+      "bg-blackDarker",
       "text-white",
       "flex",
       "flex-col",
@@ -16,13 +16,14 @@ export const hoverEffect = () => {
       "py-4",
       "transition-opacity",
       "duration-300",
+      "pointer-events-none",
+      "opacity-0", // Only opacity, no hidden
       "z-[999]",
       "w-auto",
       "rounded-lg",
       "shadow-lg",
       "border",
-      "border-blackCustom",
-      "hidden",
+      "border-blackDarker",
       "justify-start",
       "items-start",
       "text-left"
@@ -85,23 +86,18 @@ export const hoverEffect = () => {
     divGenre.textContent = "Action";
 
     genreWrapper.appendChild(divGenre);
-
     hoverDiv.append(divTitle, divProducer, wrapper, genreWrapper);
     document.body.appendChild(hoverDiv);
     return hoverDiv;
   };
 
   thumbnails.forEach((thumbnail, index) => {
-    let hoverDiv;
+    let hoverDiv = createDiv(); // Create once per thumbnail
 
-    thumbnail.addEventListener("mouseenter", (event) => {
+    thumbnail.addEventListener("mouseenter", () => {
       if (window.innerWidth >= 1024) {
-        if (!hoverDiv) {
-          hoverDiv = createDiv();
-        }
-
-        hoverDiv.classList.remove("hidden");
-        hoverDiv.style.visibility = "visible";
+        hoverDiv.classList.remove("opacity-0", "pointer-events-none");
+        hoverDiv.classList.add("opacity-100");
 
         // Positioning the div near the hovered element
         const hoverWidth = 192;
@@ -143,10 +139,8 @@ export const hoverEffect = () => {
     });
 
     thumbnail.addEventListener("mouseleave", () => {
-      if (hoverDiv) {
-        hoverDiv.classList.add("hidden");
-        hoverDiv.style.visibility = "hidden";
-      }
+      hoverDiv.classList.remove("opacity-100");
+      hoverDiv.classList.add("opacity-0", "pointer-events-none");
 
       if (thumbnailTitles[index]) {
         thumbnailTitles[index].classList.remove("text-blood");
@@ -159,9 +153,9 @@ export const hoverEffect = () => {
     const hoverDivs = document.querySelectorAll(".fixed");
     hoverDivs.forEach((hoverDiv) => {
       if (window.innerWidth < 1024) {
-        hoverDiv.classList.add("hidden");
+        hoverDiv.classList.add("opacity-0", "pointer-events-none");
       } else {
-        hoverDiv.classList.remove("hidden");
+        hoverDiv.classList.remove("opacity-0", "pointer-events-none");
       }
     });
   });

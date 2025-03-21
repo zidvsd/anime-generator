@@ -26,10 +26,46 @@ export const fetchApi = async (animeID = null, type = "random") => {
     return null;
   }
 };
+export const fetchTenTrendingAnimes = async () => {
+  try {
+    console.log("Fetching trending animes...");
+
+    const response = await fetch(
+      "https://api.jikan.moe/v4/top/anime?filter=airing&limit=10"
+    );
+
+    if (!response.ok) {
+      console.warn("❌ Failed to fetch trending animes.");
+      return [];
+    }
+
+    const data = await response.json();
+    const animeList = data?.data || [];
+
+    const trendingAnimes = animeList.map((anime) => ({
+      id: anime.mal_id,
+      title: anime.title || "Unknown Title",
+      producer: anime.studios?.[0]?.name || "Unknown Studio",
+      type: anime.type || "Unknown Type",
+      episodes: anime.episodes ?? "Unknown Episodes",
+      genres: anime.genres?.slice(0, 3).map((genre) => genre.name) || [
+        "Unknown Genre",
+      ],
+      imageUrl: anime.images?.webp?.large_image_url || "",
+    }));
+
+    console.log("✅ Trending Animes:", trendingAnimes);
+    return trendingAnimes;
+  } catch (error) {
+    console.error("⚠️ Error fetching trending animes:", error);
+    return [];
+  }
+};
 export const fetchTenRandomAnimes = async (updateAnime) => {
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  let fetchedCount = 0; // Number of successful fetches
+  let fetchedCount = 0;
+  const animeDataArray = [];
 
   while (fetchedCount < 10) {
     const randomID = Math.floor(Math.random() * 20000) + 1;
@@ -40,16 +76,31 @@ export const fetchTenRandomAnimes = async (updateAnime) => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        const anime = data?.data; // Ensure data exists
 
-        if (data.data && data.data.images) {
-          updateAnime(data.data, fetchedCount); // Update UI immediately
+        if (anime && anime.images && anime.images.webp) {
+          const animeDetails = {
+            title: anime.title || "Unknown Title",
+            producer: anime.studios?.[0]?.name || "Unknown Studio",
+            type: anime.type || "Unknown Type",
+            episodes: anime.episodes ?? "Unknown Episodes",
+            genres: anime.genres?.slice(0, 3).map((genre) => genre.name) || [
+              "Unknown Genre",
+            ],
+            imageUrl: anime.images.webp.large_image_url || "",
+          };
+
+          animeDataArray.push(animeDetails);
+          updateAnime(animeDetails, fetchedCount);
           fetchedCount++;
+
           console.log(
-            `✅ Successfully fetched: ${data.data.title} (${fetchedCount}/10)`
+            `✅ Successfully fetched: ${animeDetails.title} (${fetchedCount}/10)`
           );
         } else {
-          console.warn(`❌ Invalid data for Anime ID ${randomID}, retrying...`);
+          console.warn(
+            `❌ Missing image data for Anime ID ${randomID}, retrying...`
+          );
         }
       } else {
         console.warn(`❌ Anime ID ${randomID} not found, retrying...`);
@@ -64,5 +115,6 @@ export const fetchTenRandomAnimes = async (updateAnime) => {
     await delay(500); // Short delay to prevent hitting API rate limits
   }
 
-  console.log("✅ Finished fetching 10 random animes!");
+  console.log("✅ Finished fetching 10 random animes!", animeDataArray);
+  return animeDataArray;
 };
