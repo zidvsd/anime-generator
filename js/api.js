@@ -29,34 +29,40 @@ export const fetchApi = async (animeID = null, type = "random") => {
 export const fetchTenRandomAnimes = async (updateAnime) => {
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  try {
-    let attempts = 0; // Track fetch attempts
-    let fetchedCount = 0; // Count successful fetches
+  let fetchedCount = 0; // Number of successful fetches
 
-    while (fetchedCount < 10 && attempts < 20) {
-      const randomID = Math.floor(Math.random() * 20000) + 1;
-      const apiUrl = `https://api.jikan.moe/v4/anime/${randomID}`;
+  while (fetchedCount < 10) {
+    const randomID = Math.floor(Math.random() * 20000) + 1;
+    const apiUrl = `https://api.jikan.moe/v4/anime/${randomID}`;
 
-      try {
-        const response = await fetch(apiUrl);
+    try {
+      const response = await fetch(apiUrl);
 
-        if (response.ok) {
-          const data = await response.json();
-          if (data.data) {
-            updateAnime(data.data, fetchedCount); // Update UI immediately
-            fetchedCount++;
-          }
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+
+        if (data.data && data.data.images) {
+          updateAnime(data.data, fetchedCount); // Update UI immediately
+          fetchedCount++;
+          console.log(
+            `✅ Successfully fetched: ${data.data.title} (${fetchedCount}/10)`
+          );
         } else {
-          console.warn(`Anime ID ${randomID} not found, skipping...`);
+          console.warn(`❌ Invalid data for Anime ID ${randomID}, retrying...`);
         }
-      } catch (error) {
-        console.error(`Error fetching anime ${randomID}`, error);
+      } else {
+        console.warn(`❌ Anime ID ${randomID} not found, retrying...`);
       }
-
-      attempts++;
-      if (attempts % 5 === 0) await delay(1000); // Prevent rate limits
+    } catch (error) {
+      console.error(
+        `⚠️ Error fetching Anime ID ${randomID}, retrying...`,
+        error
+      );
     }
-  } catch (error) {
-    console.error("Error fetching random animes", error);
+
+    await delay(500); // Short delay to prevent hitting API rate limits
   }
+
+  console.log("✅ Finished fetching 10 random animes!");
 };

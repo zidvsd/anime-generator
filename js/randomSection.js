@@ -1,6 +1,6 @@
 import { fetchTenRandomAnimes } from "./api.js";
 import { randomSectionLoading } from "./loading.js";
-
+import { hoverEffect } from "./thumbnailHover.js";
 export const randomSection = async () => {
   randomSectionLoading();
 
@@ -24,5 +24,6 @@ export const randomSection = async () => {
   };
 
   await fetchTenRandomAnimes(updateAnime);
+  hoverEffect();
   console.log("✅ Finished fetching random animes!");
 };

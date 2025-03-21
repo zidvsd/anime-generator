@@ -1,6 +1,6 @@
 import { fetchApi } from "./api.js";
 import { trendingLoading } from "./loading.js";
-
+import { hoverEffect } from "./thumbnailHover.js";
 export const displayTrending = async (maxRetries = 5, retryDelay = 2000) => {
   let data = null;
   let attempts = 0;
@@ -35,6 +35,6 @@ export const displayTrending = async (maxRetries = 5, retryDelay = 2000) => {
       trendingTitle[index].innerText = anime.title;
     }
   });
-
+  hoverEffect();
   console.log("Trending anime successfully loaded!");
 };
