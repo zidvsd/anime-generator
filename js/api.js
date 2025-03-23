@@ -61,11 +61,14 @@ export const fetchTenTrendingAnimes = async () => {
     return [];
   }
 };
+export let animeDataArray = []; // Global array
+
 export const fetchTenRandomAnimes = async (updateAnime) => {
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+  animeDataArray.length = 0; // Clear existing array before fetching
+
   let fetchedCount = 0;
-  const animeDataArray = [];
 
   while (fetchedCount < 10) {
     const randomID = Math.floor(Math.random() * 20000) + 1;
@@ -78,7 +81,7 @@ export const fetchTenRandomAnimes = async (updateAnime) => {
         const data = await response.json();
         const anime = data?.data; // Ensure data exists
 
-        if (anime && anime.images && anime.images.webp) {
+        if (anime && anime.images?.webp?.large_image_url) {
           const animeDetails = {
             title: anime.title || "Unknown Title",
             producer: anime.studios?.[0]?.name || "Unknown Studio",
@@ -90,8 +93,8 @@ export const fetchTenRandomAnimes = async (updateAnime) => {
             imageUrl: anime.images.webp.large_image_url || "",
           };
 
-          animeDataArray.push(animeDetails);
-          updateAnime(animeDetails, fetchedCount);
+          animeDataArray.push(animeDetails); // Now it modifies the global array
+          if (updateAnime) updateAnime(animeDetails, fetchedCount); // Update UI
           fetchedCount++;
 
           console.log(
