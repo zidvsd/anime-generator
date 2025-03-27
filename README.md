@@ -1,4 +1,4 @@
-# Ani Gen
+# AniGen
 
 ## 🌟 Overview
 Ani Gen is a web application that helps users discover anime effortlessly! Generate random anime suggestions, explore trending shows, and dive into detailed information about your favorite series. Built with modern web technologies for a smooth and engaging user experience.
@@ -22,5 +22,8 @@ Ani Gen is a web application that helps users discover anime effortlessly! Gener
 ## 🚀 Installation
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/yourusername/ani-gen.git
-cd ani-gen
+git clone https://github.com/yourusername/anigen.git
+cd anigen
+```
+### 2. Open the Project in a Code Editor
+### 3. Run the application
