@@ -1,4 +1,5 @@
 # **AniGen**
+
 ## 🌟 Overview
 Ani Gen is a web application that helps users discover anime effortlessly! Generate random anime suggestions, explore trending shows, and dive into detailed information about your favorite series. Built with modern web technologies for a smooth and engaging user experience.
 
