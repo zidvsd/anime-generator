@@ -1,4 +1,4 @@
-# AniGen
+# **AniGen**
 
 ## 🌟 Overview
 Ani Gen is a web application that helps users discover anime effortlessly! Generate random anime suggestions, explore trending shows, and dive into detailed information about your favorite series. Built with modern web technologies for a smooth and engaging user experience.
@@ -27,3 +27,21 @@ cd anigen
 ```
 ### 2. Open the Project in a Code Editor
 ### 3. Run the application
+```sh
+Open index.html in your browser
+OR use a local development server
+```
+## 🔗 API Integration
+- If required, set up the API key in your project:
+
+```sh
+REACT_APP_API_KEY=your_api_key_here
+```
+### 🤝 Contributing
+- Want to enhance Ani Gen? Fork the repository and submit a pull request! Contributions are welcome. 🚀
+
+### 📜 License
+- This project is open-source and available under the MIT License.
+
+<p align="center">⭐ If you enjoy this project, consider starring the repository!</p>
+
