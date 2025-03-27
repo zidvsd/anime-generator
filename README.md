@@ -43,5 +43,5 @@ REACT_APP_API_KEY=your_api_key_here
 ### 📜 License
 - This project is open-source and available under the MIT License.
 
-<p align="center">⭐ If you enjoy this project, consider starring the repository!</p>
+# **⭐ If you enjoy this project, consider starring the repository!**
 
