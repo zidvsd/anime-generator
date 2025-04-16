@@ -23,7 +23,7 @@ Ani Gen is a web application that helps users discover anime effortlessly! Gener
 ## 🚀 Installation
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/yourusername/anigen.git
+git clone https://github.com/zidvsd/anigen.git
 cd anigen
 ```
 ### 2. Open the Project in a Code Editor
